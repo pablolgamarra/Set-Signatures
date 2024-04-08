@@ -1,0 +1,48 @@
+#Link para registrar aplicaciones en Microsoft Entra ID
+https://entra.microsoft.com/#view/Microsoft_AAD_RegisteredApps/ApplicationsListBlade
+
+https://learn.microsoft.com/en-us/powershell/microsoftgraph/authentication-commands?view=graph-powershell-1.0
+
+#Como obtener el ID del Tenant
+https://learn.microsoft.com/en-us/entra/fundamentals/how-to-find-tenant
+
+#ID Del Tenant en MS Entra ID
+https://portal.azure.com/#view/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/~/Properties
+
+#Modulos requeridos
+ExchangeOnlineManament
+Microsoft.graph
+Az.Accounts
+
+  #requires -modules Az.Accounts,Microsoft.Graph.Authentication
+  function Connect-MgGraphViaCred {
+      <#
+      .SYNOPSIS
+      Function for connecting to the Microsoft Graph using given credentials.
+      This option is unavailable with official Connect-MgGraph command.
+
+      .DESCRIPTION
+      Function for connecting to the Microsoft Graph using given credentials.
+      This option is unavailable with official Connect-MgGraph command.
+
+      .PARAMETER credential
+      Credential object.
+
+      .PARAMETER tenant
+      (optional) Azure tenant name or id.
+
+      .EXAMPLE
+      $cred = Get-Credential
+      Connect-MgGraphViaCred -credential $cred
+      #>
+
+      
+  }
+
+
+Activar WinRM mediante GPO'S
+https://www.ibm.com/docs/es/tarm/8.11.6?topic=management-enabling-winrm-via-global-policy-objects
+
+
+Instalar servicios de contralador de Active ActiveDirectory
+https://learn.microsoft.com/en-us/powershell/module/activedirectory/?view=windowsserver2022-ps
