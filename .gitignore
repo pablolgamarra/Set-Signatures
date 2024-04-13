@@ -1,2 +1,3 @@
 *.rar
-**/FirmasGeneradas/*
+/.vscode
+/src/SignatureTemplates/Signature.htm
