@@ -34,7 +34,7 @@ param(
     [string] $UserMail
 )
 
-begin{
+begin {
     # Connect to Microsoft Graph service using credentials
     function Connect-MgGraphViaCred {
         [CmdletBinding()]
@@ -105,10 +105,10 @@ begin{
             $FormattedSignature = ($HTML_SIGNATURE -f $User.DisplayName, $User.JobTitle, $User.BusinessPhone, $User.Mail, $User.Mail)
 
             $AuxSignature = [PSCustomObject]@{
-                UserName   = $User.DisplayName
+                UserName      = $User.DisplayName
                 Mail          = $User.Mail
-                Signature = $FormattedSignature
-                SignatureName     = "Firm-$BusinessName-$($User.DisplayName)"
+                Signature     = $FormattedSignature
+                SignatureName = "Firm-$BusinessName-$($User.DisplayName)"
             }
     
             $FormattedSignatures += $AuxSignature
@@ -138,7 +138,7 @@ begin{
         try {
             $RoamingConfigured = Get-OrganizationConfig -PostponeRoamingSignaturesUntilLater
             
-            if(-not ($RoamingConfigured)){
+            if (-not ($RoamingConfigured)) {
                 Write-Host "Postponing roaming signatures on organization."
                 Set-OrganizationConfig -PostponeRoamingSignaturesUntilLater $true
             }
@@ -168,7 +168,7 @@ begin{
     }
 }
 
-process{
+process {
     try {
         Write-Host "Signature Template Path: $TemplatePath"
         Write-Host "Organization Name: $BusinessName"
@@ -189,7 +189,7 @@ process{
 
         Write-Host "Generated Signatures quantity: $($GeneratedSignatures.Count)"
 
-        Set-OWASignatures -Signatures $GeneratedSignatures
+        #Set-OWASignatures -Signatures $GeneratedSignatures
 
         Write-Host "Signatures Set successfully."
     }
@@ -198,7 +198,7 @@ process{
     }
 }
 
-end{
+end {
     Disconnect-AzAccount
     Disconnect-MgGraph
     Disconnect-ExchangeOnline

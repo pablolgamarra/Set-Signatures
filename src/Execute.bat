@@ -7,13 +7,18 @@ color 9F
 :inicio
 echo 1- Aplicar firma a todos los usuarios
 echo 2- Aplicar firma a un solo usuario
-set /p ELECCION=[1,2]?
+echo 3- Aplicar firma a un grupo de seguridad
+set /p ELECCION=[1,2,3]?
 cls
 
 if "%ELECCION%"=="1" (
     goto ejecutarScript
-) else (
+)
+if "%ELECCION%"=="2" (
     goto ingresarUsuario
+)
+if "%ELECCION%"=="3" (
+    goto ejecutarScript
 )
 
 @echo on
@@ -23,21 +28,28 @@ echo correo: %CORREO%
 goto ejecutarScript
 exit/B 0
 
+:ingresarGrupo
+set /p CORREO="Ingrese el nombre del grupo de correos cuyas firmas desea configurar:"
+echo grupo: %GRUPO%
+goto ejecutarScript
+exit/B 0
+
 :ejecutarScript
 set SCRIPTNAME=Set-Signatures.ps1
-set SCRIPTDIR=%CD%\%SCRIPTNAME%
+set SCRIPTDIR=%CD%\Scripts\%SCRIPTNAME%
+
 
 if defined CORREO (
     echo "Configurar correo para un solo usuario: %CORREO%"
-    PowerShell -ExecutionPolicy Bypass -File "%SCRIPTDIR%" -CorreoUsuario  "%CORREO%"
+    PowerShell -ExecutionPolicy Bypass -File "%SCRIPTDIR%" -UserMail "%CORREO%" -GroupName ""
 ) else (
+    if defined GRUPO (
+        echo "Configurar correo para un grupo de seguridad: %GRUPO%"
+        PowerShell -ExecutionPolicy Bypass -File "%SCRIPTDIR%" -UserMail "%CORREO%" -GroupName "%GRUPO%"
+    )
     echo "Configurar correo para todos los usuarios"
-    PowerShell -ExecutionPolicy Bypass -File "%SCRIPTDIR%" -CorreoUsuario ""
+    PowerShell -ExecutionPolicy Bypass -File "%SCRIPTDIR%" -UserMail "" -GroupName "%GRUPO%"
 )
-
-::
-
-::PowerShell -ExecutionPolicy Bypass -File "%SCRIPTDIR%" -CorreoUsuario "%CORREO%"
 
 echo "Script Ejecutado"
 pause
