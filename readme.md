@@ -39,3 +39,10 @@ To apply a signature to a specific user:
 ```bash
 PowerShell -ExecutionPolicy Bypass -File Set-Signatures.ps1 -NombredeNegocio "MyCompany" -P
 ```
+
+Placeholders
+{0} = DisplayName
+{1} = JobTitle
+{2} = BusinessPhone
+{3} = Mail (para href)
+{4} = Mail (para mostrar)
