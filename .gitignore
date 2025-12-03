@@ -1,3 +1,6 @@
 *.rar
 /.vscode
 /src/SignatureTemplates/Signature.htm
+TemplateWithGIF.htm
+glymax_azul.gif
+Example.htm
