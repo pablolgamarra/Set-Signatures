@@ -22,16 +22,16 @@ Business or Organization name used on the generated signatures naming.
 Path of the HTML template file.
 
 .PARAMETER SetOWA
-[Optional] Switch to enable setting signatures on Outlook Web App. Default: $true
+[Optional] Switch to enable setting signatures on Outlook Web App. Default: $false
 
 .PARAMETER LogPath
 [Optional] Path to save execution logs. If not specified, logs only to console.
 
 .EXAMPLE
-.\Set-TenantSignatures.ps1 -BusinessName "Acme Corp" -TemplatePath "C:\templates\signature.html"
+.\Set-TenantSignatures.ps1 -BusinessName "Acme Corp" -TemplatePath "C:\templates\signature.html" -SetOWA
 
 .EXAMPLE
-.\Set-TenantSignatures.ps1 -BusinessName "Acme Corp" -TemplatePath "C:\templates\signature.html" -UserMail "user@acme.com" -LogPath "C:\logs"
+.\Set-TenantSignatures.ps1 -BusinessName "Acme Corp" -TemplatePath "C:\templates\signature.html" -UserMail "user@acme.com" -SetOWA -LogPath "C:\logs"
 #>
 
 param(
@@ -46,7 +46,7 @@ param(
     [string] $UserMail,
 
     [Parameter()]
-    [switch] $SetOWA = $true,
+    [switch] $SetOWA = $false,
 
     [Parameter()]
     [string] $LogPath
