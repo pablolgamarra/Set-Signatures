@@ -1,8 +1,96 @@
-<html>
-<body>
-    <p><strong>{0}</strong></p>
-    <p>{1}</p>
-    <p>Tel: {2}</p>
-    <p>Email: <a href="mailto:{3}">{4}</a></p>
-</body>
-</html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+    <TITLE>Email Signature</TITLE>
+    <META content="text/html; charset=utf-8" http-equiv="Content-Type">
+</HEAD>
+<BODY style="font-size: 10pt; font-family: Arial, sans-serif;">
+    <table style="width: 500px; font-size: 10pt; font-family: Arial, sans-serif;" cellspacing="0" cellpadding="0" border="0">
+        <tbody>
+            <!-- Información principal -->
+            <tr>
+                <td style="padding-bottom: 15px; border-bottom: 2px solid #0066cc;">
+                    <table cellspacing="0" cellpadding="0" border="0">
+                        <tr>
+                            <!-- Logo (opcional - reemplaza con tu URL) -->
+                            <td style="width: 100px; vertical-align: middle; padding-right: 15px;">
+                                <img src="https://via.placeholder.com/100x60/0066cc/FFFFFF?text=LOGO" 
+                                     alt="Company Logo" 
+                                     style="max-width: 100px; height: auto; display: block; border: 0;" 
+                                     border="0">
+                            </td>
+                            
+                            <!-- Datos del usuario -->
+                            <td style="vertical-align: middle;">
+                                <span style="font-size: 14pt; font-weight: bold; color: #1a1a1a; display: block; margin-bottom: 3px;">{0}</span>
+                                <span style="font-size: 10pt; color: #666666; display: block;">{1}</span>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            
+            <!-- Información de contacto -->
+            <tr>
+                <td style="padding-top: 15px; padding-bottom: 15px;">
+                    <table cellspacing="0" cellpadding="0" border="0">
+                        <tr>
+                            <td style="font-size: 9pt; color: #1a1a1a; line-height: 18px;">
+                                <strong>📞 Teléfono:</strong> <span style="color: #666666;">{2}</span><br>
+                                <strong>✉️ Email:</strong> <a href="mailto:{3}" style="color: #0066cc; text-decoration: none;">{4}</a><br>
+                                <strong>🌐 Web:</strong> <a href="https://www.empresa.com" target="_blank" style="color: #0066cc; text-decoration: none;">www.empresa.com</a>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            
+            <!-- Redes sociales (opcional) -->
+            <tr>
+                <td style="padding-top: 10px; padding-bottom: 15px; border-top: 1px solid #e0e0e0;">
+                    <table cellspacing="0" cellpadding="0" border="0">
+                        <tr>
+                            <td style="padding-right: 8px;">
+                                <a href="https://linkedin.com/company/tuempresa" target="_blank" rel="noopener">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" 
+                                         alt="LinkedIn" 
+                                         style="width: 20px; height: 20px; border: 0;" 
+                                         border="0">
+                                </a>
+                            </td>
+                            <td style="padding-right: 8px;">
+                                <a href="https://twitter.com/tuempresa" target="_blank" rel="noopener">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" 
+                                         alt="Twitter" 
+                                         style="width: 20px; height: 20px; border: 0;" 
+                                         border="0">
+                                </a>
+                            </td>
+                            <td>
+                                <a href="https://facebook.com/tuempresa" target="_blank" rel="noopener">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" 
+                                         alt="Facebook" 
+                                         style="width: 20px; height: 20px; border: 0;" 
+                                         border="0">
+                                </a>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            
+            <!-- Disclaimer legal -->
+            <tr>
+                <td style="padding-top: 10px; border-top: 1px solid #e0e0e0;">
+                    <p style="margin: 0; font-size: 7pt; line-height: 10pt; color: #999999; text-align: justify;">
+                        <strong>CONFIDENCIALIDAD:</strong> Este mensaje y sus archivos adjuntos van dirigidos exclusivamente a su destinatario, 
+                        pudiendo contener información confidencial sometida a secreto profesional. No está permitida su reproducción 
+                        o distribución sin la autorización expresa. Si usted no es el destinatario final, por favor elimínelo 
+                        e infórmenos por esta vía.
+                    </p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</BODY>
+</HTML>
