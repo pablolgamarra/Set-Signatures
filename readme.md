@@ -2,7 +2,9 @@
 
 [![PowerShell](https://img.shields.io/badge/PowerShell-5.1%2B-blue.svg)](https://github.com/PowerShell/PowerShell)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/Version-2.0-orange.svg)](https://github.com/pablolgamarra/Set-Signatures/releases)
+[![GitHub release](https://img.shields.io/github/v/release/pablolgamarra/Set-Signatures)](https://github.com/pablolgamarra/Set-Signatures/releases)
+[![GitHub issues](https://img.shields.io/github/issues/pablolgamarra/Set-Signatures)](https://github.com/pablolgamarra/Set-Signatures/issues)
+[![GitHub stars](https://img.shields.io/github/stars/pablolgamarra/Set-Signatures)](https://github.com/pablolgamarra/Set-Signatures/stargazers)
 
 > Script de Powershell para configurar firmas de correo electrónico de usuarios a nivel de Tenant en Microsoft Office 365
 
